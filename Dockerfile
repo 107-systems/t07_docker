@@ -13,7 +13,7 @@ RUN git clone https://github.com/catchorg/Catch2 && cd Catch2 && \
     sudo make install
 
 RUN git clone https://github.com/fmtlib/fmt && cd fmt && \
-    RUN mkdir build && cd build && \
+    mkdir build && cd build && \
     cmake -DFMT_TEST=OFF .. && \
     make -j8 && \
     sudo make install
