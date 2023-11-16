@@ -1,6 +1,8 @@
 FROM docker.io/arm64v8/ros:humble-ros-base
 
-WORKDIR /tmp
+RUN mkdir -p /tmp/t07_depend
+WORKDIR /tmp/t07_depend
+
 RUN git clone https://github.com/gsl-lite/gsl-lite && cd gsl-lite
 RUN mkdir build && cd build
 RUN cmake .. && make -j8
