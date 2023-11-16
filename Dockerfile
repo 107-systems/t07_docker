@@ -1,25 +1,30 @@
 FROM docker.io/arm64v8/ros:humble-ros-base
 
-RUN mkdir -p /tmp/t07_depend
-WORKDIR /tmp/t07_depend
-
-RUN git clone https://github.com/gsl-lite/gsl-lite && cd gsl-lite
+WORKDIR /tmp
+RUN git clone https://github.com/gsl-lite/gsl-lite
+WORKDIR /tmp/gsl-lite
 RUN mkdir build && cd build
 RUN cmake .. && make -j8
 RUN sudo make install
 
-RUN git clone https://github.com/catchorg/Catch2 && cd Catch2
+WORKDIR /tmp
+RUN git clone https://github.com/catchorg/Catch2
+WORKDIR /tmp/Catch2
 RUN mkdir build && cd build
 RUN cmake .. && make -j8
 RUN sudo make install
 
-RUN git clone https://github.com/fmtlib/fmt && cd fmt
+WORKDIR /tmp
+RUN git clone https://github.com/fmtlib/fmt
+WORKDIR /tmp/fmt
 RUN mkdir build && cd build
 RUN cmake -DFMT_TEST=OFF ..
 RUN make -j8
 RUN sudo make install
 
-RUN git clone https://github.com/mpusz/mp-units && cd mp-units
+WORKDIR /tmp
+RUN git clone https://github.com/mpusz/mp-units
+WORKDIR /tmp/mp-units
 RUN mkdir build && cd build
 RUN cmake -DMP_UNITS_AS_SYSTEM_HEADERS=ON -DMP_UNITS_BUILD_LA=OFF ..
 RUN make -j8
