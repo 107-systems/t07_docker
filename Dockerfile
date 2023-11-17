@@ -18,12 +18,6 @@ RUN git clone https://github.com/fmtlib/fmt && cd fmt && \
     make -j8 && \
     sudo make install
 
-RUN git clone https://github.com/mpusz/mp-units && cd mp-units && \
-    mkdir build && cd build && \
-    cmake -DMP_UNITS_AS_SYSTEM_HEADERS=ON -DMP_UNITS_BUILD_LA=OFF .. && \
-    make -j8 && \
-    sudo make install
-
 RUN mkdir -p /tmp/colcon_ws/src
 WORKDIR /tmp/colcon_ws/src
 RUN git clone --recursive https://github.com/107-systems/t07_robot
