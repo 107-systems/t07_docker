@@ -24,7 +24,7 @@ RUN git clone --recursive https://github.com/107-systems/t07_robot
 
 WORKDIR /tmp/colcon_ws
 RUN . /opt/ros/humble/setup.sh && \
-    colcon_ws build --symlink-install
+    colcon build --symlink-install
 
 COPY start.sh /
 RUN chmod ugo+x /start.sh
