@@ -27,7 +27,7 @@ echo 0 > /sys/class/gpio/gpio$GPIO_CAN0_STBY/value
 
 ip link set $CAN type can bitrate $CAN_BITRATE
 ip link set $CAN up
-ifconfig can0 txqueuelen 1000
+ifconfig $CAN txqueuelen 1000
 
 sudo -u fio ifconfig $CAN
 
