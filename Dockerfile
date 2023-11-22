@@ -1,5 +1,7 @@
 FROM docker.io/arm64v8/ros:humble-ros-base
 
+RUN apt update && apt install can-utils
+
 WORKDIR /tmp
 
 RUN git clone https://github.com/gsl-lite/gsl-lite && cd gsl-lite && \
@@ -20,7 +22,9 @@ RUN git clone https://github.com/fmtlib/fmt && cd fmt && \
 
 RUN mkdir -p /tmp/colcon_ws/src
 WORKDIR /tmp/colcon_ws/src
-RUN git clone --recursive https://github.com/107-systems/t07_robot
+RUN git clone --recursive https://github.com/107-systems/t07_robot && \
+    cd t07_robot && \
+    git checkout dev
 
 WORKDIR /tmp/colcon_ws
 RUN . /opt/ros/humble/setup.sh && \
