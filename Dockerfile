@@ -1,5 +1,7 @@
 FROM docker.io/arm64v8/ros:humble-ros-base
 
+RUN apt update && apt install can-utils
+
 WORKDIR /tmp
 
 RUN git clone https://github.com/gsl-lite/gsl-lite && cd gsl-lite && \
