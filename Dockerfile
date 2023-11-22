@@ -29,4 +29,4 @@ RUN . /opt/ros/humble/setup.sh && \
 COPY start.sh /
 RUN chmod ugo+x /start.sh
 
-ENTRYPOINT ["/start.sh"]
+#ENTRYPOINT ["/start.sh"]

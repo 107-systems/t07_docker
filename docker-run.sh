@@ -34,4 +34,4 @@ docker run -it \
    -u 0 \
    --privileged \
    --network host \
-   pika_spark_t07_docker
+   pika_spark_t07_docker sh
