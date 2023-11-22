@@ -24,7 +24,8 @@ RUN mkdir -p /tmp/colcon_ws/src
 WORKDIR /tmp/colcon_ws/src
 RUN git clone --recursive https://github.com/107-systems/t07_robot && \
     cd t07_robot && \
-    git checkout dev
+    git checkout dev && \
+    git pull origin dev
 
 WORKDIR /tmp/colcon_ws
 RUN . /opt/ros/humble/setup.sh && \
