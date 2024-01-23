@@ -5,8 +5,14 @@
 
 Dockerfile and scripts to run the required [T07](https://github.com/107-systems/T07) control software on the [Pika Spark](https://pika-spark.io/).
 
-#### How-to-Docker
+#### How-to-run on [Pika Spark](https://pika-spark.io/)
 ```bash
 ./docker-build.sh
-sudo ./docker-run.sh
+sudo ./docker-run-pika-spark.sh
+```
+
+#### How-to-run on Raspberry Pi via Zubax Babel
+```bash
+./docker-build.sh
+sudo ./docker-run-babel.sh
 ```
