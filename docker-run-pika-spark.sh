@@ -7,6 +7,11 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
+if [ "$#" -ne 1 ]; then
+  echo "Usage: sudo ./docker-run.sh [t07.py | t07_4wd.py | t07_tracked.py]"
+  exit 1
+fi
+
 CAN=can0
 CAN_BITRATE=250000
 GPIO_CAN0_STBY=160
@@ -35,4 +40,4 @@ docker run -it \
    -u 0 \
    --privileged \
    --network host \
-   pika_spark_t07_docker
+   pika_spark_t07_docker $1
