@@ -8,11 +8,11 @@ Dockerfile and scripts to run the required [T07](https://github.com/107-systems/
 #### How-to-run on [Pika Spark](https://pika-spark.io/)
 ```bash
 ./docker-build.sh
-sudo ./docker-run-pika-spark.sh
+sudo ./docker-run-pika-spark.sh [t07.py | t07_4wd.py | t07_tracked.py]
 ```
 
 #### How-to-run on Raspberry Pi via Zubax Babel
 ```bash
 ./docker-build.sh
-sudo ./docker-run-babel.sh
+sudo ./docker-run-babel.sh [t07.py | t07_4wd.py | t07_tracked.py]
 ```
